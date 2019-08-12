@@ -9,17 +9,14 @@ services:
     command: npm start
     working_dir: /usr/src/smart-brain-api
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: admin
-      POSTGRES_DB: smart-brain-docker
-      POSTGRES_HOST: postgres
+      POSTGRES_URI: psql postgres://postgres:admin@192.168.99.100:5432/smart-brain-docker
     links:
       - postgres
 
     ports:
       - "3000:3000"
 #    volumes:
-#      -  .//://usr/src/
+#      - ./:/usr/src/smart-brain-api
 
 
   # Postgres
