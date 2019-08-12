@@ -10,9 +10,9 @@ services:
     working_dir: /usr/src/smart-brain-api
     environment:
       POSTGRES_USER: postgres
-      POSTGRESS_PASSWORD: admin
-      POSTGRESS_DB: smart-brain-docker
-      POSTGRESS_HOST: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: smart-brain-docker
+      POSTGRES_HOST: postgres
     links:
       - postgres
 
@@ -25,6 +25,11 @@ services:
   # Postgres
   postgres:
     container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: smart-brain-docker
+      POSTGRES_HOST: postgres
     build:
       ./postgres
     ports:
